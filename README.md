@@ -1,8 +1,8 @@
 # Portfolio
 
-Static personal portfolio website for Daniele Raiola — Philosophy of Science, epistemology, and scientific collaboration.
+This is a static personal portfolio website tailored for my academic resume.
 
-## What to edit
+## Structure/What to edit
 
 - **Personal data**: `assets/js/site-config.js`
 - **Section content**: `index.html`
@@ -11,25 +11,6 @@ Static personal portfolio website for Daniele Raiola — Philosophy of Science, 
 - **Profile image**: `assets/images/profile-placeholder.svg`
 - **CV PDF**: `assets/cv/cv.pdf`
 
-## Run locally
+## Feel free to use this repository as a template for your personal Portfolio!
 
-```bash
-python -m http.server 8000
-```
 
-Open http://localhost:8000.
-
-## Tooling
-
-```bash
-npm install
-npm run lint        # Lint JS, CSS, and HTML
-npm run format      # Format code with Prettier
-```
-
-## Linting and formatting
-
-- **JS**: ESLint (recommended config)
-- **CSS**: Stylelint (standard config)
-- **HTML**: HTMLHint
-- **Formatting**: Prettier
