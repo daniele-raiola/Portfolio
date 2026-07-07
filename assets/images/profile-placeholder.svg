@@ -1,0 +1,9 @@
+<svg width="800" height="900" viewBox="0 0 800 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="900" rx="40" fill="#EEF3F9"/>
+  <circle cx="400" cy="330" r="180" fill="#2563EB" fill-opacity="0.16"/>
+  <circle cx="400" cy="330" r="120" fill="#2563EB" fill-opacity="0.24"/>
+  <circle cx="400" cy="330" r="80" fill="#2563EB"/>
+  <path d="M250 790C275 650 325 590 400 590C475 590 525 650 550 790" fill="#1F3A5F"/>
+  <rect x="230" y="720" width="340" height="80" rx="24" fill="#152033"/>
+  <text x="400" y="770" text-anchor="middle" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="700">YOUR PHOTO</text>
+</svg>

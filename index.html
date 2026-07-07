@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Academic portfolio of Daniele Raiola — Philosophy of Science, epistemology, and scientific collaboration." />
+    <meta name="author" content="Daniele Raiola" />
+    <meta property="og:title" content="Daniele Raiola — Philosophy of Science" />
+    <meta property="og:description" content="Academic portfolio of Daniele Raiola." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+    <title data-field="name">Your Name</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var theme =
+            stored ||
+            (window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to content</a>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="#top" data-field="name">Your Name</a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#about">Research</a>
+          <a href="#education">Education</a>
+          <a href="#publications">Publications</a>
+          <a href="#talks">Talks</a>
+          <a href="#cv">CV</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Toggle dark mode"
+          title="Toggle dark mode"
+        >
+          <svg class="theme-toggle-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path class="icon-moon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            <circle class="icon-sun" cx="12" cy="12" r="4" />
+            <line class="icon-sun" x1="12" y1="2" x2="12" y2="4" />
+            <line class="icon-sun" x1="12" y1="20" x2="12" y2="22" />
+            <line class="icon-sun" x1="4.93" y1="4.93" x2="6.34" y2="6.34" />
+            <line class="icon-sun" x1="17.66" y1="17.66" x2="19.07" y2="19.07" />
+            <line class="icon-sun" x1="2" y1="12" x2="4" y2="12" />
+            <line class="icon-sun" x1="20" y1="12" x2="22" y2="12" />
+            <line class="icon-sun" x1="4.93" y1="19.07" x2="6.34" y2="17.66" />
+            <line class="icon-sun" x1="17.66" y1="6.34" x2="19.07" y2="4.93" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <aside class="hero-card" aria-label="Quick profile">
+            <img src="assets/images/profile-photo.jpg" alt="Profile photo" />
+          </aside>
+          <div class="hero-text">
+            <span class="eyebrow" data-field="tagline">Academic Title</span>
+            <h1 data-field="name">Your Name</h1>
+            <p data-field="summary">Replace this intro with a short description of your research and academic profile.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="#cv">Download CV</a>
+              <a class="btn btn-secondary" data-email-link href="mailto:you@example.com">Email</a>
+            </div>
+            <div class="profile-links" id="profile-links" aria-label="Academic profiles"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container">
+          <div class="section-heading">
+            <h2 class="section-accent">About me</h2>
+          </div>
+          <div id="about-content" class="about-text"></div>
+        </div>
+      </section>
+
+      <section id="education">
+        <div class="container">
+          <div class="section-heading">
+            <h2 class="section-accent">Education</h2>
+            <p>Academic background</p>
+          </div>
+          <div id="education-list" class="timeline"></div>
+        </div>
+      </section>
+
+      <section id="other-experience">
+        <div class="container">
+          <details class="collapsible-block other-experience-collapsible">
+            <summary class="collapsible-summary">Other professional experience</summary>
+            <div class="collapsible-content">
+              <div id="other-experience-list" class="timeline"></div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="publications">
+        <div class="container">
+          <div class="section-heading">
+            <h2 class="section-accent">Publications & Research Output</h2>
+            <p>Articles, chapters, and working papers</p>
+          </div>
+          <div id="publications-list" class="publications"></div>
+        </div>
+      </section>
+
+      <section id="talks">
+        <div class="container">
+          <div class="section-heading">
+            <h2 class="section-accent">Talks & Conferences</h2>
+            <p>Academic talks and attendance</p>
+          </div>
+
+          <div class="conferences-group">
+            <h3 class="section-accent">Public Outreach</h3>
+            <div id="conferences-public" class="timeline"></div>
+          </div>
+
+          <div class="conferences-group">
+            <h3 class="section-accent">Scientific Presentations</h3>
+            <div id="conferences-scientific" class="timeline"></div>
+          </div>
+
+          <div class="conferences-group">
+            <h3 class="section-accent">Attendance</h3>
+            <div id="conferences-attendance" class="timeline"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cv">
+        <div class="container">
+          <div class="section-card contact-card">
+            <h2>CV</h2>
+            <p>Download my full curriculum vitae.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="assets/cv/cv.pdf" download>Download CV</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div class="section-card contact-card">
+            <h2>Contact</h2>
+            <p data-field="contactMessage">I am open to collaborations, speaking opportunities, and research projects.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" data-email-link href="mailto:you@example.com">you@example.com</a>
+            </div>
+            <div class="profile-links profile-links--center" id="contact-profiles" aria-label="Academic profiles"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© <span data-field="name">Your Name</span>. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/site-config.js"></script>
+    <script src="assets/js/site-strings.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
