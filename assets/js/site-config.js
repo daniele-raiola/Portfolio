@@ -3,10 +3,10 @@ const siteConfig = {
   title: "Philosophy of Science",
   tagline: "H&PS · Social Epistemology · Epistemic Trust",
   summary:
-    "I'm a PhD student in Philosophy with specialization in philosophy of science and epistemology, focusing on the role of Epistemic Trust in shaping the epistemic output of research collectives.",
+    "I'm a PhD student in Philosophy at Ca' Foscari University in Venice with a specialization in philosophy of science and epistemology, focusing on the role of Epistemic Trust in shaping the epistemic output of research collectives.",
   email: "daniele.raiola98@gmail.com",
   about:
-    "Troughout my bachelor's and master's degree in University of Milan, i specialized in H&PS and Social Epistemology. My research focuses on understanding how collective knowledge become possible and what is it's epistemic nature. I address these questions through the lens of social epistemology and models of scientific collaboration in large-scale international projects. I'm now working on a doctoral thesis entitled Epistemology of Trust: How Trust shape Knowledge which aims to provide a philosophical account of the role of trust in shaping the epistemic output of research collectives of (ng)EHT and LIGO. I'm also active in science communication, event organization, and public engagement as a volunteer member of the Osservatorio Astronomico G.V. Schiaparelli, where I foster my love for science and nature.",
+    "Troughout my Bachelor's and Master's degree in University of Milan, I specialized in <strong>H&PS</strong> and <strong>Social Epistemology</strong>. My research focuses on understanding how <strong>collective knowledge</strong> become possible and what is it's <strong>epistemic nature</strong>. I address these questions through the lens of social epistemology and models of <strong>scientific collaboration</strong> in large-scale international projects. I'm now working on a doctoral thesis entitled <strong>Epistemology of Trust: How Trust shape Knowledge</strong> which aims to provide a philosophical account of the role of trust in shaping the epistemic output of research collectives of <strong>(ng)EHT</strong> and <strong>LIGO</strong>.\nI'm also active in science communication, event organization, and public engagement as a volunteer member of the [Osservatorio Astronomico G.V. Schiaparelli](https://www.astrogeo.va.it/), where I foster my love for science and nature.",
   experience: [
     {
       role: "Volunteer & Full Member",
@@ -80,7 +80,7 @@ const siteConfig = {
       event: "Towards a Quantum Culture: The Different Interpretations of Quantum Mechanics",
       date: "Dec 9–11, 2025",
       description:
-        "Attendance — SISFA Workshop — Towards a Quantum Culture: The Different Interpretations of Quantum Mechanics."
+        "SISFA Workshop — Towards a Quantum Culture: The Different Interpretations of Quantum Mechanics."
     },
     {
       title: "COSMOS Project",
@@ -88,7 +88,7 @@ const siteConfig = {
       event: "Modeling the Cosmos: Frontiers in Philosophy of Astrophysics and Cosmology",
       date: "Mar 3–4, 2026",
       description:
-        "Attendance — COSMOS Project — Modeling the Cosmos: Frontiers in Philosophy of Astrophysics and Cosmology."
+        "COSMOS Project — Modeling the Cosmos: Frontiers in Philosophy of Astrophysics and Cosmology."
     },
     {
       title: "ngEHT Workshop",
@@ -96,7 +96,7 @@ const siteConfig = {
       event: "Black Hole Initiative History, Philosophy, and Culture Day",
       date: "May 19, 2026",
       description:
-        "Attendance — ngEHT Workshop — Black Hole Initiative History, Philosophy, and Culture Day."
+        "ngEHT Workshop — Black Hole Initiative History, Philosophy, and Culture Day."
     }
   ],
   contactMessage:

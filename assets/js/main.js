@@ -155,7 +155,13 @@ function renderAbout() {
   if (!container) return;
   const text = siteConfig.about || siteConfig.summary;
   if (!text) return;
-  container.textContent = text;
+  const html = text
+    .replace(/\n/g, "<br>")
+    .replace(
+      /\[([^\]]+)\]\(([^)]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener noreferrer"><strong>$1</strong></a>'
+    );
+  container.innerHTML = html;
 }
 
 function initThemeToggle() {
