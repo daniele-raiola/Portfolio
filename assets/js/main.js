@@ -164,6 +164,30 @@ function renderAbout() {
   container.innerHTML = html;
 }
 
+function initNavToggle() {
+  const toggle = document.querySelector("#nav-toggle");
+  const links = document.querySelector("#nav-links");
+  if (!toggle || !links) return;
+
+  function setOpen(open) {
+    links.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  }
+
+  toggle.addEventListener("click", () => {
+    setOpen(!links.classList.contains("is-open"));
+  });
+
+  links.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setOpen(false);
+  });
+}
+
 function initThemeToggle() {
   const root = document.documentElement;
   const toggle = document.querySelector("#theme-toggle");
@@ -189,6 +213,7 @@ function initThemeToggle() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  initNavToggle();
   initThemeToggle();
   populateFields();
   renderAbout();
