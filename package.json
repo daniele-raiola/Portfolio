@@ -5,17 +5,24 @@
   "description": "Static personal portfolio website",
   "scripts": {
     "preview": "python -m http.server 8000",
-    "lint:js": "eslint assets/js/*.js",
-    "lint:css": "stylelint assets/css/*.css",
+    "lint:js": "eslint assets/js",
+    "lint:css": "stylelint assets/css",
     "lint:html": "htmlhint index.html",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "format:check": "prettier --check .",
     "format": "prettier --write ."
   },
   "devDependencies": {
-    "eslint": "^9.0.0",
-    "htmlhint": "^1.5.0",
-    "prettier": "^3.4.0",
-    "stylelint": "^16.0.0",
-    "stylelint-config-standard": "^36.0.0"
+    "@eslint/js": "^9.39.5",
+    "eslint": "^9.39.5",
+    "globals": "^15.15.0",
+    "htmlhint": "^1.9.2",
+    "jsdom": "^25.0.1",
+    "prettier": "^3.9.6",
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard": "^36.0.1",
+    "vitest": "^2.1.9"
   }
 }

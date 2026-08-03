@@ -1,32 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Academic portfolio of Daniele Raiola — Philosophy of Science, epistemology, and scientific collaboration." />
+    <meta
+      name="description"
+      content="Academic portfolio of Daniele Raiola — Philosophy of Science, epistemology, and scientific collaboration."
+    />
     <meta name="author" content="Daniele Raiola" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ffffff" />
     <meta property="og:title" content="Daniele Raiola — Philosophy of Science" />
     <meta property="og:description" content="Academic portfolio of Daniele Raiola." />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com" />
+    <meta property="og:image" content="https://example.com/assets/images/profile-photo.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Daniele Raiola — Philosophy of Science" />
+    <meta name="twitter:description" content="Academic portfolio of Daniele Raiola." />
+    <meta name="twitter:image" content="https://example.com/assets/images/profile-photo.jpg" />
+    <link rel="canonical" href="https://example.com" />
     <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
     <title data-field="name">Your Name</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <script>
       (function () {
         try {
-          var stored = localStorage.getItem("theme");
+          var stored = localStorage.getItem('theme');
           var theme =
             stored ||
-            (window.matchMedia("(prefers-color-scheme: dark)").matches
-              ? "dark"
-              : "light");
-          document.documentElement.setAttribute("data-theme", theme);
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
         } catch (e) {}
       })();
     </script>
   </head>
   <body>
     <a class="skip-link" href="#top">Skip to content</a>
+
+    <noscript>
+      <div class="noscript-warning container">
+        <p>
+          This portfolio requires JavaScript to render its interactive content. You can still
+          download my CV below or
+          <a href="mailto:daniele.raiola98@gmail.com">email me</a> directly.
+        </p>
+      </div>
+    </noscript>
+
     <header class="site-header">
       <div class="container nav">
         <a class="brand" href="#top" data-field="name">Your Name</a>
@@ -58,19 +79,30 @@
             aria-label="Toggle dark mode"
             title="Toggle dark mode"
           >
-          <svg class="theme-toggle-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path class="icon-moon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-            <circle class="icon-sun" cx="12" cy="12" r="4" />
-            <line class="icon-sun" x1="12" y1="2" x2="12" y2="4" />
-            <line class="icon-sun" x1="12" y1="20" x2="12" y2="22" />
-            <line class="icon-sun" x1="4.93" y1="4.93" x2="6.34" y2="6.34" />
-            <line class="icon-sun" x1="17.66" y1="17.66" x2="19.07" y2="19.07" />
-            <line class="icon-sun" x1="2" y1="12" x2="4" y2="12" />
-            <line class="icon-sun" x1="20" y1="12" x2="22" y2="12" />
-            <line class="icon-sun" x1="4.93" y1="19.07" x2="6.34" y2="17.66" />
-            <line class="icon-sun" x1="17.66" y1="6.34" x2="19.07" y2="4.93" />
-          </svg>
-        </button>
+            <svg
+              class="theme-toggle-icon"
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path class="icon-moon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              <circle class="icon-sun" cx="12" cy="12" r="4" />
+              <line class="icon-sun" x1="12" y1="2" x2="12" y2="4" />
+              <line class="icon-sun" x1="12" y1="20" x2="12" y2="22" />
+              <line class="icon-sun" x1="4.93" y1="4.93" x2="6.34" y2="6.34" />
+              <line class="icon-sun" x1="17.66" y1="17.66" x2="19.07" y2="19.07" />
+              <line class="icon-sun" x1="2" y1="12" x2="4" y2="12" />
+              <line class="icon-sun" x1="20" y1="12" x2="22" y2="12" />
+              <line class="icon-sun" x1="4.93" y1="19.07" x2="6.34" y2="17.66" />
+              <line class="icon-sun" x1="17.66" y1="6.34" x2="19.07" y2="4.93" />
+            </svg>
+          </button>
         </div>
       </div>
     </header>
@@ -84,7 +116,9 @@
           <div class="hero-text">
             <span class="eyebrow" data-field="tagline">Academic Title</span>
             <h1 data-field="name">Your Name</h1>
-            <p data-field="summary">Replace this intro with a short description of your research and academic profile.</p>
+            <p data-field="summary">
+              Replace this intro with a short description of your research and academic profile.
+            </p>
             <div class="btn-row">
               <a class="btn btn-primary" href="RAiOLA_CV.pdf" download>Download CV</a>
               <a class="btn btn-secondary" data-email-link href="mailto:you@example.com">Email</a>
@@ -127,7 +161,7 @@
       <section id="publications">
         <div class="container">
           <div class="section-heading">
-            <h2 class="section-accent">Publications & Research Output</h2>
+            <h2 class="section-accent">Publications &amp; Research Output</h2>
             <p>Articles, chapters, and working papers</p>
           </div>
           <div id="publications-list" class="publications"></div>
@@ -137,7 +171,7 @@
       <section id="talks">
         <div class="container">
           <div class="section-heading">
-            <h2 class="section-accent">Talks & Conferences</h2>
+            <h2 class="section-accent">Talks &amp; Conferences</h2>
             <p>Academic talks and attendance</p>
           </div>
 
@@ -174,11 +208,15 @@
         <div class="container">
           <div class="section-card contact-card">
             <h2>Contact</h2>
-            <p data-field="contactMessage">I am open to collaborations, speaking opportunities, and research projects.</p>
+            <p data-field="contactMessage">
+              I am open to collaborations, speaking opportunities, and research projects.
+            </p>
             <div class="btn-row">
-              <a class="btn btn-primary" data-email-link href="mailto:you@example.com">you@example.com</a>
+              <a class="btn btn-primary" data-email-link href="mailto:you@example.com"
+                >you@example.com</a
+              >
             </div>
-            <div class="profile-links profile-links--center" id="contact-profiles" aria-label="Academic profiles"></div>
+            <div class="profile-links" id="contact-profiles" aria-label="Academic profiles"></div>
           </div>
         </div>
       </section>
@@ -186,12 +224,10 @@
 
     <footer>
       <div class="container">
-        <p>© <span data-field="name">Your Name</span>. All rights reserved.</p>
+        <p>&copy; <span data-field="name">Your Name</span>. All rights reserved.</p>
       </div>
     </footer>
 
-    <script src="assets/js/site-config.js"></script>
-    <script src="assets/js/site-strings.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
   </body>
 </html>
