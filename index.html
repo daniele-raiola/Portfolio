@@ -23,17 +23,6 @@
     <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
     <title data-field="name">Your Name</title>
     <link rel="stylesheet" href="assets/css/style.css" />
-    <script>
-      (function () {
-        try {
-          var stored = localStorage.getItem('theme');
-          var theme =
-            stored ||
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-          document.documentElement.setAttribute('data-theme', theme);
-        } catch (e) {}
-      })();
-    </script>
   </head>
   <body>
     <a class="skip-link" href="#top">Skip to content</a>
@@ -111,7 +100,7 @@
       <section class="hero">
         <div class="container hero-grid">
           <aside class="hero-card" aria-label="Quick profile">
-            <img src="assets/images/profile-photo.jpg" alt="Profile photo" />
+            <img src="assets/images/profile-photo.jpg" alt="Profile photo of Daniele Raiola" />
           </aside>
           <div class="hero-text">
             <span class="eyebrow" data-field="tagline">Academic Title</span>
@@ -120,7 +109,7 @@
               Replace this intro with a short description of your research and academic profile.
             </p>
             <div class="btn-row">
-              <a class="btn btn-primary" href="RAiOLA_CV.pdf" download>Download CV</a>
+              <a class="btn btn-primary" data-field="cvPath" download>Download CV</a>
               <a class="btn btn-secondary" data-email-link href="mailto:you@example.com">Email</a>
             </div>
             <div class="profile-links" id="profile-links" aria-label="Academic profiles"></div>
@@ -148,7 +137,7 @@
           <section id="other-experience">
             <div class="container">
               <details class="collapsible-block other-experience-collapsible">
-                <summary class="collapsible-summary">Other professional experience</summary>
+                <summary class="collapsible-summary" data-field="experienceCategoryLabel">Other professional experience</summary>
                 <div class="collapsible-content">
                   <div id="other-experience-list" class="timeline"></div>
                 </div>
@@ -198,7 +187,7 @@
             <h2>CV</h2>
             <p>Download my full curriculum vitae.</p>
             <div class="btn-row">
-              <a class="btn btn-primary" href="RAiOLA_CV.pdf" download>Download CV</a>
+              <a class="btn btn-primary" data-field="cvPath" download>Download CV</a>
             </div>
           </div>
         </div>

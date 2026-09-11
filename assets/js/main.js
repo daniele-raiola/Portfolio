@@ -65,7 +65,11 @@ export function groupPublications(items) {
 function populateFields() {
   document.querySelectorAll('[data-field]').forEach((element) => {
     const key = element.dataset.field;
-    if (key && siteConfig[key]) {
+    if (!key || !siteConfig[key]) return;
+
+    if (element.tagName === 'A' && key === 'cvPath') {
+      element.href = siteConfig[key];
+    } else {
       element.textContent = siteConfig[key];
     }
   });
@@ -108,9 +112,10 @@ function renderEducation() {
 }
 
 function renderExperience() {
-  const other = (siteConfig.experience || []).filter((e) => e.category === 'other');
+  const category = siteConfig.experienceCategory || 'other';
+  const items = (siteConfig.experience || []).filter((e) => e.category === category);
 
-  renderTimeline(other, '#other-experience-list', (item) => {
+  renderTimeline(items, '#other-experience-list', (item) => {
     return `
       <article class="timeline-item">
         <h3>${safeText(item.role)}</h3>
@@ -120,7 +125,7 @@ function renderExperience() {
     `;
   });
 
-  if (other.length === 0) {
+  if (items.length === 0) {
     const section = document.querySelector('#other-experience');
     if (section) section.remove();
   }
@@ -195,7 +200,7 @@ function renderConferences() {
 function renderAbout() {
   const container = document.querySelector('#about-content');
   if (!container) return;
-  const text = siteConfig.about || siteConfig.summary;
+  const text = siteConfig.about;
   if (!text) return;
   container.innerHTML = markdownInline(text);
 }
@@ -244,6 +249,33 @@ function renderSEO() {
     meta.content = siteConfig.image;
     document.head.appendChild(meta);
   }
+
+  const seoFields = [
+    {
+      selector: 'meta[property="og:title"]',
+      property: 'og:title',
+      content: siteConfig.title ? `${siteConfig.name} — ${siteConfig.title}` : siteConfig.name,
+    },
+    { selector: 'meta[property="og:description"]', property: 'og:description', content: siteConfig.summary },
+    {
+      selector: 'meta[name="twitter:title"]',
+      property: null,
+      name: 'twitter:title',
+      content: siteConfig.title ? `${siteConfig.name} — ${siteConfig.title}` : siteConfig.name,
+    },
+    { selector: 'meta[name="twitter:description"]', property: null, name: 'twitter:description', content: siteConfig.summary },
+  ];
+
+  seoFields.forEach((field) => {
+    let meta = document.querySelector(field.selector);
+    if (!meta) {
+      meta = document.createElement('meta');
+      if (field.property) meta.setAttribute('property', field.property);
+      if (field.name) meta.setAttribute('name', field.name);
+      document.head.appendChild(meta);
+    }
+    meta.content = field.content || '';
+  });
 
   const schema = {
     '@context': 'https://schema.org',
@@ -302,7 +334,9 @@ function getStoredTheme() {
   try {
     const stored = localStorage.getItem('theme');
     if (stored === 'dark' || stored === 'light') return stored;
-  } catch {}
+  } catch {
+    // localStorage may be unavailable (private mode, quota exceeded, etc.)
+  }
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
@@ -335,7 +369,9 @@ function initThemeToggle() {
     applyTheme(next);
     try {
       localStorage.setItem('theme', next);
-    } catch {}
+    } catch {
+      // localStorage may be unavailable (private mode, quota exceeded, etc.)
+    }
   });
 }
 

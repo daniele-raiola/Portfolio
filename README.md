@@ -52,8 +52,18 @@ portfolio/
 - `siteConfig.about` is parsed with a tiny inline Markdown subset: `**bold**`
   and `[text](url)`. Everything is HTML-escaped first, so no raw markup from
   the data reaches the DOM.
+- `siteConfig.summary` is plain text used for the hero intro and SEO fallbacks.
+  It is **not** parsed as Markdown.
 - `siteStrings.details.itemDelimiter` (a middot `·`) separates bullet items
   inside a `details` field.
+- `siteConfig.experience[]` renders as a timeline (each item: `role`,
+  `organization`, `period`, `category`, `description`). Only items with
+  `category: 'other'` appear in the **Other professional experience**
+  collapsible section.
+- `siteConfig.publications[]` renders grouped by `type` (each item: `title`,
+  `authors`, `venue`, `year`, `link`, `type`). If empty, the section is hidden.
+- Conference dates should use `Month D, YYYY` or `Month D–DD, YYYY` for ranges.
+  Avoid prefixes like `Scheduled`.
 
 ## Development
 

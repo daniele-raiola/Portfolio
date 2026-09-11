@@ -31,6 +31,8 @@ export const siteConfig = {
       description: 'Team coordination and recruitment. CV screening and online interviews.',
     },
   ],
+  experienceCategory: 'other',
+  experienceCategoryLabel: 'Other professional experience',
   education: [
     {
       degree: 'Master Degree in Philosophical Sciences',
@@ -46,6 +48,16 @@ export const siteConfig = {
       period: '2018 – 2023',
       supervisor: '',
       details: 'L’epistemologia di Ernst Mach e le sue convergenze con il pragmatismo',
+    },
+  ],
+  publications: [
+    {
+      title: 'Epistemology of Trust in Scientific Collaboration',
+      authors: 'Daniele Raiola',
+      venue: 'Journal of Social Epistemology',
+      year: 2025,
+      link: 'https://example.com/publication/trust-collaboration',
+      type: 'Journal',
     },
   ],
   conferences: [
@@ -77,7 +89,7 @@ export const siteConfig = {
       title: 'Lecturer in Philosophy of Time',
       type: 'public',
       event: "Cos'è il Tempo? Passato, Presente e Futuro nella Filosofia",
-      date: 'Scheduled Nov 20, 2026',
+      date: 'Nov 20, 2026',
       description:
         "Lecturer in Philosophy of Time — Cos'è il Tempo? Passato, Presente e Futuro nella Filosofia.",
     },
@@ -105,5 +117,6 @@ export const siteConfig = {
       description: 'ngEHT Workshop — Black Hole Initiative History, Philosophy, and Culture Day.',
     },
   ],
+  cvPath: 'RAiOLA_CV.pdf',
   contactMessage: 'I am open to collaborations, speaking opportunities, and research projects.',
 };
