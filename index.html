@@ -21,7 +21,20 @@
     <meta name="twitter:image" content="https://example.com/assets/images/profile-photo.jpg" />
     <link rel="canonical" href="https://example.com" />
     <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
-    <title data-field="name">Your Name</title>
+    <title data-field="name">Daniele Raiola — Philosophy of Science</title>
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('theme');
+          if (t !== 'dark' && t !== 'light')
+            t = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+          document.documentElement.setAttribute('data-theme', t);
+        } catch(e) {}
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
@@ -39,7 +52,7 @@
 
     <header class="site-header">
       <div class="container nav">
-        <a class="brand" href="#top" data-field="name">Your Name</a>
+        <a class="brand" href="#top" data-field="name">Daniele Raiola</a>
         <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
           <a href="#about">Research</a>
           <a href="#education">Education</a>
@@ -96,21 +109,19 @@
       </div>
     </header>
 
-    <main id="top">
+    <main id="top" tabindex="-1">
       <section class="hero">
         <div class="container hero-grid">
           <aside class="hero-card" aria-label="Quick profile">
-            <img src="assets/images/profile-photo.jpg" alt="Profile photo of Daniele Raiola" />
+            <img src="assets/images/profile-photo.jpg" alt="Profile photo of Daniele Raiola" width="280" height="280" fetchpriority="high" decoding="async" />
           </aside>
           <div class="hero-text">
-            <span class="eyebrow" data-field="tagline">Academic Title</span>
-            <h1 data-field="name">Your Name</h1>
-            <p data-field="summary">
-              Replace this intro with a short description of your research and academic profile.
-            </p>
+            <span class="eyebrow" data-field="tagline">H&amp;PS · Social Epistemology · Epistemic Trust</span>
+            <h1 data-field="name">Daniele Raiola</h1>
+            <p data-field="summary">I'm a PhD student in Philosophy at Ca' Foscari University in Venice with a specialization in philosophy of science and epistemology, focusing on the role of epistemic trust in shaping the epistemic output of research collectives.</p>
             <div class="btn-row">
-              <a class="btn btn-primary" data-field="cvPath" download>Download CV</a>
-              <a class="btn btn-secondary" data-email-link href="mailto:you@example.com">Email</a>
+              <a class="btn btn-primary" href="RAiOLA_CV.pdf" data-field="cvPath" download>Download CV</a>
+              <a class="btn btn-secondary" data-email-link href="mailto:daniele.raiola98@gmail.com">Email</a>
             </div>
             <div class="profile-links" id="profile-links" aria-label="Academic profiles"></div>
           </div>
@@ -133,17 +144,17 @@
             <p>Academic background</p>
           </div>
           <div id="education-list" class="timeline"></div>
+        </div>
+      </section>
 
-          <section id="other-experience">
-            <div class="container">
-              <details class="collapsible-block other-experience-collapsible">
-                <summary class="collapsible-summary" data-field="experienceCategoryLabel">Other professional experience</summary>
-                <div class="collapsible-content">
-                  <div id="other-experience-list" class="timeline"></div>
-                </div>
-              </details>
+      <section id="other-experience">
+        <div class="container">
+          <details class="collapsible-block other-experience-collapsible">
+            <summary class="collapsible-summary" data-field="experienceCategoryLabel">Other professional experience</summary>
+            <div class="collapsible-content">
+              <div id="other-experience-list" class="timeline"></div>
             </div>
-          </section>
+          </details>
         </div>
       </section>
 
@@ -187,7 +198,7 @@
             <h2>CV</h2>
             <p>Download my full curriculum vitae.</p>
             <div class="btn-row">
-              <a class="btn btn-primary" data-field="cvPath" download>Download CV</a>
+              <a class="btn btn-primary" href="RAiOLA_CV.pdf" data-field="cvPath" download>Download CV</a>
             </div>
           </div>
         </div>
@@ -201,9 +212,7 @@
               I am open to collaborations, speaking opportunities, and research projects.
             </p>
             <div class="btn-row">
-              <a class="btn btn-primary" data-email-link href="mailto:you@example.com"
-                >you@example.com</a
-              >
+              <a class="btn btn-primary" data-email-link href="mailto:daniele.raiola98@gmail.com">daniele.raiola98@gmail.com</a>
             </div>
             <div class="profile-links" id="contact-profiles" aria-label="Academic profiles"></div>
           </div>
@@ -213,7 +222,7 @@
 
     <footer>
       <div class="container">
-        <p>&copy; <span data-field="name">Your Name</span>. All rights reserved.</p>
+        <p>&copy; <span data-field="name">Daniele Raiola</span>. All rights reserved.</p>
       </div>
     </footer>
 

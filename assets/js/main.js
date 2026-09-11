@@ -2,7 +2,7 @@ import { siteConfig } from './site-config.js';
 import { siteStrings } from './site-strings.js';
 
 const LINK_OUT_ICON =
-  '<svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><line x1="7" y1="7" x2="17" y2="17"></line></svg>';
+  '<svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
 
 const THEME_COLORS = { light: '#ffffff', dark: '#18202e' };
 
@@ -139,6 +139,8 @@ function renderPublications() {
   if (items.length === 0) {
     const section = container.closest('section');
     if (section) section.remove();
+    const navLink = document.querySelector('a[href="#publications"]');
+    if (navLink) navLink.remove();
     return;
   }
 
@@ -182,7 +184,11 @@ function renderConferences() {
     if (container) container.innerHTML = '';
   });
 
-  (siteConfig.conferences || []).forEach((item) => {
+  const sortedConferences = [...(siteConfig.conferences || [])].sort(
+    (a, b) => new Date(b.date.split('–')[0]) - new Date(a.date.split('–')[0])
+  );
+
+  sortedConferences.forEach((item) => {
     const container = groups[item.type];
     if (!container) return;
 
@@ -242,12 +248,16 @@ function renderSEO() {
     canonical.href = siteConfig.url;
   }
 
-  const ogImage = document.querySelector('meta[property="og:image"]');
-  if (siteConfig.image && !ogImage) {
-    const meta = document.createElement('meta');
-    meta.setAttribute('property', 'og:image');
-    meta.content = siteConfig.image;
-    document.head.appendChild(meta);
+  if (siteConfig.image) {
+    let ogImage = document.querySelector('meta[property="og:image"]');
+    if (ogImage) {
+      ogImage.content = siteConfig.image;
+    } else {
+      ogImage = document.createElement('meta');
+      ogImage.setAttribute('property', 'og:image');
+      ogImage.content = siteConfig.image;
+      document.head.appendChild(ogImage);
+    }
   }
 
   const seoFields = [
@@ -387,4 +397,12 @@ document.addEventListener('DOMContentLoaded', () => {
   renderConferences();
   renderProfileLinks();
   renderSEO();
+
+  const yearSpan = document.querySelector('footer [data-field="name"]');
+  if (yearSpan) {
+    const footerP = yearSpan.closest('p');
+    if (footerP) {
+      footerP.innerHTML = `\u00a9 ${new Date().getFullYear()} ${safeText(siteConfig.name)}. All rights reserved.`;
+    }
+  }
 });

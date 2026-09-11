@@ -784,7 +784,7 @@ footer {
       padding 0.3s ease;
   }
 
-  /* Fallback for no-JS: fixed max-height when the open class is present. */
+  /* JS-driven open state: fixed max-height when the open class is toggled. */
   .nav-links.is-open {
     max-height: 24rem;
     opacity: 1;
@@ -852,5 +852,25 @@ footer {
 
   section + section {
     border-top: 1px solid #ccc;
+  }
+}
+
+/* ===========================================================================
+   18. No-JS fallback
+   =========================================================================== */
+
+@media (width <= 768px) {
+  .noscript-nav-fix .nav-links {
+    position: static;
+    max-height: none;
+    opacity: 1;
+    pointer-events: auto;
+    flex-direction: column;
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .noscript-nav-fix .nav-toggle {
+    display: none;
   }
 }

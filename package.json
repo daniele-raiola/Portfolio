@@ -4,8 +4,8 @@
   "private": true,
   "description": "Static personal portfolio website",
   "scripts": {
-    "preview": "python -m http.server 8000",
-    "lint:js": "eslint assets/js",
+    "preview": "npx --yes serve . -l 8000",
+    "lint:js": "eslint assets/js tests",
     "lint:css": "stylelint assets/css",
     "lint:html": "htmlhint index.html",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:html",

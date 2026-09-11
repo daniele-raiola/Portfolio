@@ -10,7 +10,7 @@
   "id-class-value": "dash",
   "head-script-disabled": false,
   "style-disabled": false,
-  "space-tab-mixed-disabled": "true",
+  "space-tab-mixed-disabled": true,
   "id-class-ad-disabled": true,
   "href-abs-or-rel": false,
   "attr-unsafe-chars": true

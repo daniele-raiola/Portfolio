@@ -50,16 +50,7 @@ export const siteConfig = {
       details: 'L’epistemologia di Ernst Mach e le sue convergenze con il pragmatismo',
     },
   ],
-  publications: [
-    {
-      title: 'Epistemology of Trust in Scientific Collaboration',
-      authors: 'Daniele Raiola',
-      venue: 'Journal of Social Epistemology',
-      year: 2025,
-      link: 'https://example.com/publication/trust-collaboration',
-      type: 'Journal',
-    },
-  ],
+  publications: [],
   conferences: [
     {
       title: 'Lecturer in Philosophy of Science',
