@@ -11,26 +11,31 @@
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#ffffff" />
     <meta property="og:title" content="Daniele Raiola — Philosophy of Science" />
-    <meta property="og:description" content="Academic portfolio of Daniele Raiola." />
+    <meta
+      property="og:description"
+      content="I'm a PhD student in Philosophy at Ca' Foscari University in Venice with a specialization in philosophy of science and epistemology, focusing on the role of epistemic trust in shaping the epistemic output of research collectives."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://example.com" />
-    <meta property="og:image" content="https://example.com/assets/images/profile-photo.jpg" />
+    <meta property="og:url" content="https://daniele-raiola.github.io/Portfolio" />
+    <meta property="og:image" content="assets/images/profile-photo.jpg" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Daniele Raiola — Philosophy of Science" />
-    <meta name="twitter:description" content="Academic portfolio of Daniele Raiola." />
-    <meta name="twitter:image" content="https://example.com/assets/images/profile-photo.jpg" />
-    <link rel="canonical" href="https://example.com" />
+    <meta
+      name="twitter:description"
+      content="I'm a PhD student in Philosophy at Ca' Foscari University in Venice with a specialization in philosophy of science and epistemology, focusing on the role of epistemic trust in shaping the epistemic output of research collectives."
+    />
+    <link rel="canonical" href="https://daniele-raiola.github.io/Portfolio" />
     <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
-    <title data-field="name">Daniele Raiola — Philosophy of Science</title>
-    <script>
-      (function(){
-        try {
-          var t = localStorage.getItem('theme');
-          if (t !== 'dark' && t !== 'light')
-            t = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
-          document.documentElement.setAttribute('data-theme', t);
-        } catch(e) {}
-      })();
+    <title>Daniele Raiola — Philosophy of Science</title>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Daniele Raiola",
+  "url": "https://daniele-raiola.github.io/Portfolio",
+  "email": "daniele.raiola98@gmail.com",
+  "jobTitle": "Philosophy of Science"
+}
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,21 +43,21 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <a class="skip-link" href="#top">Skip to content</a>
+    <input type="checkbox" id="theme-toggle-checkbox" class="theme-toggle-checkbox" aria-label="Toggle dark mode">
 
-    <noscript>
-      <div class="noscript-warning container">
-        <p>
-          This portfolio requires JavaScript to render its interactive content. You can still
-          download my CV below or
-          <a href="mailto:daniele.raiola98@gmail.com">email me</a> directly.
-        </p>
-      </div>
-    </noscript>
+    <a class="skip-link" href="#top">Skip to content</a>
 
     <header class="site-header">
       <div class="container nav">
-        <a class="brand" href="#top" data-field="name">Daniele Raiola</a>
+        <a class="brand" href="#top">Daniele Raiola</a>
+
+        <input type="checkbox" id="nav-toggle-checkbox" class="nav-toggle-checkbox" aria-label="Toggle navigation menu" aria-controls="nav-links">
+        <label for="nav-toggle-checkbox" class="nav-toggle">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </label>
+
         <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
           <a href="#about">Research</a>
           <a href="#education">Education</a>
@@ -61,26 +66,9 @@
           <a href="#cv">CV</a>
           <a href="#contact">Contact</a>
         </nav>
+
         <div class="nav-actions">
-          <button
-            id="nav-toggle"
-            class="nav-toggle"
-            type="button"
-            aria-label="Open menu"
-            aria-expanded="false"
-            aria-controls="nav-links"
-          >
-            <span class="nav-toggle-bar"></span>
-            <span class="nav-toggle-bar"></span>
-            <span class="nav-toggle-bar"></span>
-          </button>
-          <button
-            id="theme-toggle"
-            class="theme-toggle"
-            type="button"
-            aria-label="Toggle dark mode"
-            title="Toggle dark mode"
-          >
+          <label for="theme-toggle-checkbox" class="theme-toggle" title="Toggle dark mode">
             <svg
               class="theme-toggle-icon"
               viewBox="0 0 24 24"
@@ -104,7 +92,7 @@
               <line class="icon-sun" x1="4.93" y1="19.07" x2="6.34" y2="17.66" />
               <line class="icon-sun" x1="17.66" y1="6.34" x2="19.07" y2="4.93" />
             </svg>
-          </button>
+          </label>
         </div>
       </div>
     </header>
@@ -116,14 +104,19 @@
             <img src="assets/images/profile-photo.jpg" alt="Profile photo of Daniele Raiola" width="280" height="280" fetchpriority="high" decoding="async" />
           </aside>
           <div class="hero-text">
-            <span class="eyebrow" data-field="tagline">H&amp;PS · Social Epistemology · Epistemic Trust</span>
-            <h1 data-field="name">Daniele Raiola</h1>
-            <p data-field="summary">I'm a PhD student in Philosophy at Ca' Foscari University in Venice with a specialization in philosophy of science and epistemology, focusing on the role of epistemic trust in shaping the epistemic output of research collectives.</p>
+            <span class="eyebrow">H&amp;PS · Social Epistemology · Epistemic Trust</span>
+            <h1>Daniele Raiola</h1>
+            <p>I'm a PhD student in Philosophy at Ca' Foscari University in Venice with a specialization in philosophy of science and epistemology, focusing on the role of epistemic trust in shaping the epistemic output of research collectives.</p>
             <div class="btn-row">
-              <a class="btn btn-primary" href="RAiOLA_CV.pdf" data-field="cvPath" download>Download CV</a>
-              <a class="btn btn-secondary" data-email-link href="mailto:daniele.raiola98@gmail.com">Email</a>
+              <a class="btn btn-primary" href="raiola-cv.pdf" download>Download CV</a>
+              <a class="btn btn-secondary" href="mailto:daniele.raiola98@gmail.com">daniele.raiola98@gmail.com</a>
             </div>
-            <div class="profile-links" id="profile-links" aria-label="Academic profiles"></div>
+            <div class="profile-links" id="profile-links" aria-label="Academic profiles">
+              <a class="profile-link" href="https://philpeople.org/" target="_blank" rel="noopener noreferrer" aria-label="PhilPeople"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span>PhilPeople</span></a>
+              <a class="profile-link" href="https://orcid.org/0009-0002-0610-3505" target="_blank" rel="noopener noreferrer" aria-label="ORCID"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span>ORCID</span></a>
+              <a class="profile-link" href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span>Google Scholar</span></a>
+              <a class="profile-link" href="https://www.researchgate.net/" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span>ResearchGate</span></a>
+            </div>
           </div>
         </div>
       </section>
@@ -133,7 +126,9 @@
           <div class="section-heading">
             <h2 class="section-accent">About me</h2>
           </div>
-          <div id="about-content" class="about-text"></div>
+          <div id="about-content" class="about-text">
+            Throughout my Bachelor&#39;s and Master&#39;s degree at the University of Milan, I specialized in <strong>H&amp;PS</strong> and <strong>Social Epistemology</strong>. My research focuses on understanding how <strong>collective knowledge</strong> becomes possible and what is its <strong>epistemic nature</strong>. I address these questions through the lens of social epistemology and models of <strong>scientific collaboration</strong> in large-scale international projects. I&#39;m now working on a doctoral thesis entitled <strong>Epistemology of Trust: How Trust Shapes Knowledge</strong>, which aims to provide a philosophical account of the role of trust in shaping the epistemic output of research collectives of <strong>(ng)EHT</strong> and <strong>LIGO</strong>.<br>I&#39;m also active in science communication, event organization, and public engagement as a volunteer member of the <a href="https://www.astrogeo.va.it/" target="_blank" rel="noopener noreferrer"><strong>Osservatorio Astronomico G.V. Schiaparelli</strong></a>, where I foster my love for science and nature.
+          </div>
         </div>
       </section>
 
@@ -141,18 +136,59 @@
         <div class="container">
           <div class="section-heading">
             <h2 class="section-accent">Education</h2>
-            <p>Academic background</p>
           </div>
-          <div id="education-list" class="timeline"></div>
+          <div id="education-list" class="timeline">
+            <article class="timeline-item">
+              <h3>PhD in Philosophy</h3>
+              <p><strong>Università Ca&#39; Foscari Venezia</strong> <span aria-hidden="true">·</span> Sep 2025 – Present</p>
+              <details class="education-collapsible">
+                <summary class="collapsible-summary">Abstract / Thesis</summary>
+                <div class="collapsible-content">
+                  <p>Epistemology of Trust: How Trust Shapes Knowledge</p>
+                </div>
+              </details>
+            </article>
+            <article class="timeline-item">
+              <h3>Master Degree in Philosophical Sciences</h3>
+              <p><strong>Università degli Studi di Milano</strong> <span aria-hidden="true">·</span> 2023 – 2025</p>
+              <details class="education-collapsible">
+                <summary class="collapsible-summary">Abstract / Thesis</summary>
+                <div class="collapsible-content">
+                  <p>Epistemology of the Emergent Subject: Models of Collaboration in the Event Horizon Telescope Scientific Enterprise</p>
+                </div>
+              </details>
+            </article>
+            <article class="timeline-item">
+              <h3>Bachelor Degree in Philosophy</h3>
+              <p><strong>Università degli Studi di Milano</strong> <span aria-hidden="true">·</span> 2018 – 2023</p>
+              <details class="education-collapsible">
+                <summary class="collapsible-summary">Abstract / Thesis</summary>
+                <div class="collapsible-content">
+                  <p>L’epistemologia di Ernst Mach e le sue convergenze con il pragmatismo</p>
+                </div>
+              </details>
+            </article>
+          </div>
         </div>
       </section>
 
       <section id="other-experience">
         <div class="container">
           <details class="collapsible-block other-experience-collapsible">
-            <summary class="collapsible-summary" data-field="experienceCategoryLabel">Other professional experience</summary>
+            <summary class="collapsible-summary">Other professional experience</summary>
             <div class="collapsible-content">
-              <div id="other-experience-list" class="timeline"></div>
+              <div id="other-experience-list" class="timeline">
+                <article class="timeline-item">
+                  <h3>Volunteer &amp; Full Member</h3>
+                  <p><strong>Osservatorio Astronomico G.V. Schiaparelli</strong> <span aria-hidden="true">·</span> Jul 2016 – Present</p>
+                  <p>Science communication and public outreach. Cultural events planning and delivery. Volunteer training and didactic support. Lecturer in philosophy of science for astronomers and science communicators.</p>
+                </article>
+                <article class="timeline-item">
+                  <h3>HR and Recruitment</h3>
+                  <p><strong>Growtize Holding</strong> <span aria-hidden="true">·</span> Apr 2023 – Jul 2023</p>
+                  <p>Team coordination and recruitment. CV screening and online interviews.</p>
+                </article>
+              </div>
             </div>
           </details>
         </div>
@@ -162,9 +198,17 @@
         <div class="container">
           <div class="section-heading">
             <h2 class="section-accent">Publications &amp; Research Output</h2>
-            <p>Articles, chapters, and working papers</p>
           </div>
-          <div id="publications-list" class="publications"></div>
+          <div id="publications-list" class="publications">
+            <div class="publications-group">
+              <h3 class="section-accent">Work in Progress / Thesis</h3>
+              <ul class="publications-list">
+                <li class="publication-item">
+                  <span class="publication-title">Epistemology of Trust: How Trust Shapes Knowledge</span> <span class="publication-authors">Daniele Raiola</span> <span class="publication-meta">Doctoral dissertation in progress, Ca&#39; Foscari University of Venice, In progress</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -172,22 +216,59 @@
         <div class="container">
           <div class="section-heading">
             <h2 class="section-accent">Talks &amp; Conferences</h2>
-            <p>Academic talks and attendance</p>
           </div>
 
           <div class="conferences-group">
             <h3 class="section-accent">Public Outreach</h3>
-            <div id="conferences-public" class="timeline"></div>
+            <div id="conferences-public" class="timeline">
+              <article class="timeline-item">
+                <h3>Lecturer in Philosophy of Time</h3>
+                <p><strong>Cos&#39;è il Tempo? Passato, Presente e Futuro nella Filosofia</strong> <span aria-hidden="true">·</span> Nov 20, 2026</p>
+                <p>Lecturer in Philosophy of Time — Cos&#39;è il Tempo? Passato, Presente e Futuro nella Filosofia.</p>
+              </article>
+              <article class="timeline-item">
+                <h3>Lecturer in Philosophy of Science</h3>
+                <p><strong>Filosofia della Scienza per la Comunicazione Scientifica</strong> <span aria-hidden="true">·</span> Apr 19, 2026</p>
+                <p>Lecturer in Philosophy of Science — Filosofia della Scienza per la Comunicazione Scientifica: Capire come Conosciamo per raccontare cosa Conosciamo.</p>
+              </article>
+              <article class="timeline-item">
+                <h3>Lecturer in Philosophy of Science</h3>
+                <p><strong>Filosofia della Scienza per Astronomi</strong> <span aria-hidden="true">·</span> Nov 9, 2025</p>
+                <p>Lecturer in Philosophy of Science — Filosofia della Scienza per Astronomi: le domande fondamentali sulla scienza e il suo progresso.</p>
+              </article>
+            </div>
           </div>
 
           <div class="conferences-group">
             <h3 class="section-accent">Scientific Presentations</h3>
-            <div id="conferences-scientific" class="timeline"></div>
+            <div id="conferences-scientific" class="timeline">
+              <article class="timeline-item">
+                <h3>Presentation of Master&#39;s Thesis</h3>
+                <p><strong>History, Philosophy and Culture ngEHT Collaboration Working Group</strong> <span aria-hidden="true">·</span> Nov 26, 2025</p>
+                <p>Presentation of Master&#39;s Thesis — History, Philosophy and Culture ngEHT Collaboration Working Group.</p>
+              </article>
+            </div>
           </div>
 
           <div class="conferences-group">
-            <h3 class="section-accent">Attendance</h3>
-            <div id="conferences-attendance" class="timeline"></div>
+            <h3 class="section-accent">Attendance &amp; Broader Interests</h3>
+            <div id="conferences-attendance" class="timeline">
+              <article class="timeline-item">
+                <h3>ngEHT Workshop</h3>
+                <p><strong>Black Hole Initiative History, Philosophy, and Culture Day</strong> <span aria-hidden="true">·</span> May 19, 2026</p>
+                <p>ngEHT Workshop — Black Hole Initiative History, Philosophy, and Culture Day.</p>
+              </article>
+              <article class="timeline-item">
+                <h3>COSMOS Project</h3>
+                <p><strong>Modeling the Cosmos: Frontiers in Philosophy of Astrophysics and Cosmology</strong> <span aria-hidden="true">·</span> Mar 3–4, 2026</p>
+                <p>COSMOS Project — Modeling the Cosmos: Frontiers in Philosophy of Astrophysics and Cosmology.</p>
+              </article>
+              <article class="timeline-item">
+                <h3>SISFA Workshop</h3>
+                <p><strong>Towards a Quantum Culture: The Different Interpretations of Quantum Mechanics</strong> <span aria-hidden="true">·</span> Dec 9–11, 2025</p>
+                <p>SISFA Workshop — Towards a Quantum Culture: The Different Interpretations of Quantum Mechanics.</p>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -198,7 +279,7 @@
             <h2>CV</h2>
             <p>Download my full curriculum vitae.</p>
             <div class="btn-row">
-              <a class="btn btn-primary" href="RAiOLA_CV.pdf" data-field="cvPath" download>Download CV</a>
+              <a class="btn btn-primary" href="raiola-cv.pdf" download>Download CV</a>
             </div>
           </div>
         </div>
@@ -208,13 +289,18 @@
         <div class="container">
           <div class="section-card contact-card">
             <h2>Contact</h2>
-            <p data-field="contactMessage">
+            <p>
               I am open to collaborations, speaking opportunities, and research projects.
             </p>
             <div class="btn-row">
-              <a class="btn btn-primary" data-email-link href="mailto:daniele.raiola98@gmail.com">daniele.raiola98@gmail.com</a>
+              <a class="btn btn-primary" href="mailto:daniele.raiola98@gmail.com">daniele.raiola98@gmail.com</a>
             </div>
-            <div class="profile-links" id="contact-profiles" aria-label="Academic profiles"></div>
+            <div class="profile-links" id="contact-profiles" aria-label="Academic profiles">
+              <a class="profile-link" href="https://philpeople.org/" target="_blank" rel="noopener noreferrer" aria-label="PhilPeople"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span>PhilPeople</span></a>
+              <a class="profile-link" href="https://orcid.org/0009-0002-0610-3505" target="_blank" rel="noopener noreferrer" aria-label="ORCID"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span>ORCID</span></a>
+              <a class="profile-link" href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span>Google Scholar</span></a>
+              <a class="profile-link" href="https://www.researchgate.net/" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span>ResearchGate</span></a>
+            </div>
           </div>
         </div>
       </section>
@@ -222,10 +308,8 @@
 
     <footer>
       <div class="container">
-        <p>&copy; <span data-field="name">Daniele Raiola</span>. All rights reserved.</p>
+        <p>&copy; 2026 Daniele Raiola. All rights reserved.</p>
       </div>
     </footer>
-
-    <script type="module" src="assets/js/main.js"></script>
   </body>
 </html>

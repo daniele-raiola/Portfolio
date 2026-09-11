@@ -7,6 +7,7 @@
 
   /* Color palette */
   --bg: #f4f7fb;
+  --bg-gradient-start: #f8fbff;
   --surface: #fff;
   --surface-alt: #eef3f9;
   --text: #152033;
@@ -44,10 +45,11 @@
   --font: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
 
-:root[data-theme='dark'] {
+:root:has(#theme-toggle-checkbox:checked) {
   color-scheme: dark;
 
   --bg: #0f1521;
+  --bg-gradient-start: #0b1019;
   --surface: #18202e;
   --surface-alt: #131b27;
   --text: #e6edf6;
@@ -60,11 +62,7 @@
   --shadow-sm: 0 10px 24px rgb(0 0 0 / 35%);
 }
 
-:root[data-theme='dark'] body {
-  background: linear-gradient(180deg, #0b1019 0%, var(--bg) 100%);
-}
-
-:root[data-theme='dark'] .site-header {
+:root:has(#theme-toggle-checkbox:checked) .site-header {
   background: rgb(15 21 33 / 92%);
 }
 
@@ -92,9 +90,22 @@ body {
   margin: 0;
   font-family: var(--font);
   color: var(--text);
-  background: linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg) 100%);
   line-height: 1.7;
   font-size: var(--text-base);
+}
+
+.theme-toggle-checkbox,
+.nav-toggle-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* ===========================================================================
@@ -130,7 +141,9 @@ a {
 
 a:focus-visible,
 button:focus-visible,
-summary:focus-visible {
+summary:focus-visible,
+.nav-toggle-checkbox:focus-visible + .nav-toggle,
+:root:has(#theme-toggle-checkbox:focus-visible) .theme-toggle {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
@@ -273,11 +286,11 @@ section + section {
   display: none;
 }
 
-:root[data-theme='dark'] .theme-toggle-icon .icon-moon {
+:root:has(#theme-toggle-checkbox:checked) .theme-toggle-icon .icon-moon {
   display: none;
 }
 
-:root[data-theme='dark'] .theme-toggle-icon .icon-sun {
+:root:has(#theme-toggle-checkbox:checked) .theme-toggle-icon .icon-sun {
   display: block;
 }
 
@@ -320,15 +333,15 @@ section + section {
     opacity 0.2s ease;
 }
 
-.nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-child(1) {
+.nav-toggle-checkbox:checked + .nav-toggle .nav-toggle-bar:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
 
-.nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-child(2) {
+.nav-toggle-checkbox:checked + .nav-toggle .nav-toggle-bar:nth-child(2) {
   opacity: 0;
 }
 
-.nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-child(3) {
+.nav-toggle-checkbox:checked + .nav-toggle .nav-toggle-bar:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
 
@@ -736,17 +749,6 @@ footer {
    15. Alerts
    =========================================================================== */
 
-.noscript-warning p {
-  margin: 0;
-  color: var(--muted);
-  font-size: var(--text-sm);
-}
-
-.noscript-warning a {
-  color: var(--primary);
-  text-decoration: underline;
-}
-
 /* ===========================================================================
    16. Responsive
    =========================================================================== */
@@ -784,8 +786,7 @@ footer {
       padding 0.3s ease;
   }
 
-  /* JS-driven open state: fixed max-height when the open class is toggled. */
-  .nav-links.is-open {
+  .nav-toggle-checkbox:checked ~ .nav-links {
     max-height: 24rem;
     opacity: 1;
     pointer-events: auto;
@@ -852,25 +853,5 @@ footer {
 
   section + section {
     border-top: 1px solid #ccc;
-  }
-}
-
-/* ===========================================================================
-   18. No-JS fallback
-   =========================================================================== */
-
-@media (width <= 768px) {
-  .noscript-nav-fix .nav-links {
-    position: static;
-    max-height: none;
-    opacity: 1;
-    pointer-events: auto;
-    flex-direction: column;
-    padding: var(--space-sm) var(--space-md);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .noscript-nav-fix .nav-toggle {
-    display: none;
   }
 }
