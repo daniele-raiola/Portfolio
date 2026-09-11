@@ -3,9 +3,9 @@
    =========================================================================== */
 
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
 
-  /* Color palette */
+  /* Color palette (light defaults) */
   --bg: #f4f7fb;
   --bg-gradient-start: #f8fbff;
   --surface: #fff;
@@ -15,6 +15,9 @@
   --primary: #2563eb;
   --primary-dark: #133d91;
   --primary-soft: rgb(37 99 235 / 10%);
+  --primary-glow: rgb(37 99 235 / 15%);
+  --primary-shadow: rgb(37 99 235 / 20%);
+  --primary-shadow-hover: rgb(37 99 235 / 28%);
   --border: #dbe3ee;
   --shadow: 0 20px 45px rgb(21 32 51 / 8%);
   --shadow-sm: 0 10px 24px rgb(21 32 51 / 6%);
@@ -57,6 +60,9 @@
   --primary: #4f86ff;
   --primary-dark: #93b4ff;
   --primary-soft: rgb(79 134 255 / 15%);
+  --primary-glow: rgb(79 134 255 / 15%);
+  --primary-shadow: rgb(79 134 255 / 20%);
+  --primary-shadow-hover: rgb(79 134 255 / 28%);
   --border: #2a3548;
   --shadow: 0 20px 45px rgb(0 0 0 / 45%);
   --shadow-sm: 0 10px 24px rgb(0 0 0 / 35%);
@@ -64,6 +70,54 @@
 
 :root:has(#theme-toggle-checkbox:checked) .site-header {
   background: rgb(15 21 33 / 92%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(:has(#theme-toggle-checkbox:checked)) {
+    color-scheme: dark;
+    --bg: #0f1521;
+    --bg-gradient-start: #0b1019;
+    --surface: #18202e;
+    --surface-alt: #131b27;
+    --text: #e6edf6;
+    --muted: #9aa9bd;
+    --primary: #4f86ff;
+    --primary-dark: #93b4ff;
+    --primary-soft: rgb(79 134 255 / 15%);
+    --primary-glow: rgb(79 134 255 / 15%);
+    --primary-shadow: rgb(79 134 255 / 20%);
+    --primary-shadow-hover: rgb(79 134 255 / 28%);
+    --border: #2a3548;
+    --shadow: 0 20px 45px rgb(0 0 0 / 45%);
+    --shadow-sm: 0 10px 24px rgb(0 0 0 / 35%);
+  }
+
+  :root:has(#theme-toggle-checkbox:checked) {
+    color-scheme: light;
+    --bg: #f4f7fb;
+    --bg-gradient-start: #f8fbff;
+    --surface: #fff;
+    --surface-alt: #eef3f9;
+    --text: #152033;
+    --muted: #5c6b7f;
+    --primary: #2563eb;
+    --primary-dark: #133d91;
+    --primary-soft: rgb(37 99 235 / 10%);
+    --primary-glow: rgb(37 99 235 / 15%);
+    --primary-shadow: rgb(37 99 235 / 20%);
+    --primary-shadow-hover: rgb(37 99 235 / 28%);
+    --border: #dbe3ee;
+    --shadow: 0 20px 45px rgb(21 32 51 / 8%);
+    --shadow-sm: 0 10px 24px rgb(21 32 51 / 6%);
+  }
+
+  :root:not(:has(#theme-toggle-checkbox:checked)) .site-header {
+    background: rgb(15 21 33 / 92%);
+  }
+
+  :root:has(#theme-toggle-checkbox:checked) .site-header {
+    background: rgb(255 255 255 / 95%);
+  }
 }
 
 * {
@@ -275,11 +329,7 @@ section + section {
   transform: translateY(-1px);
   border-color: var(--primary);
   color: var(--primary);
-  box-shadow: 0 8px 18px rgb(37 99 235 / 15%);
-}
-
-.theme-toggle-icon {
-  display: block;
+  box-shadow: 0 8px 18px var(--primary-glow);
 }
 
 .theme-toggle-icon .icon-sun {
@@ -292,6 +342,24 @@ section + section {
 
 :root:has(#theme-toggle-checkbox:checked) .theme-toggle-icon .icon-sun {
   display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(:has(#theme-toggle-checkbox:checked)) .theme-toggle-icon .icon-moon {
+    display: none;
+  }
+
+  :root:not(:has(#theme-toggle-checkbox:checked)) .theme-toggle-icon .icon-sun {
+    display: block;
+  }
+
+  :root:has(#theme-toggle-checkbox:checked) .theme-toggle-icon .icon-moon {
+    display: block;
+  }
+
+  :root:has(#theme-toggle-checkbox:checked) .theme-toggle-icon .icon-sun {
+    display: none;
+  }
 }
 
 /* Hamburger menu toggle (hidden on desktop) */
@@ -318,7 +386,7 @@ section + section {
 .nav-toggle:hover {
   border-color: var(--primary);
   color: var(--primary);
-  box-shadow: 0 8px 18px rgb(37 99 235 / 15%);
+  box-shadow: 0 8px 18px var(--primary-glow);
 }
 
 .nav-toggle-bar {
@@ -371,10 +439,6 @@ section + section {
 }
 
 .hero-card {
-  background: none;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
   text-align: center;
   max-width: 340px;
   margin: 0 auto;
@@ -440,11 +504,11 @@ section + section {
 .btn-primary {
   background: var(--primary);
   color: #fff;
-  box-shadow: 0 10px 24px rgb(37 99 235 / 20%);
+  box-shadow: 0 10px 24px var(--primary-shadow);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 14px 30px rgb(37 99 235 / 28%);
+  box-shadow: 0 14px 30px var(--primary-shadow-hover);
 }
 
 .btn-secondary {
@@ -550,25 +614,54 @@ section + section {
   color: var(--muted);
 }
 
-.details-list {
-  list-style: disc;
-  padding-left: var(--space-lg);
-  margin: var(--space-sm) 0 0;
+/* ===========================================================================
+   10. Publications
+   =========================================================================== */
+
+.publications-group {
+  margin-bottom: var(--space-xl);
+}
+
+.publications-group:last-child {
+  margin-bottom: 0;
+}
+
+.publications-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-md);
+}
+
+.publication-item {
+  padding: var(--space-md) var(--space-lg);
+  display: grid;
+  gap: var(--space-xs);
+}
+
+.publication-title {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.publication-authors {
   color: var(--muted);
 }
 
-.details-list li {
-  margin: var(--space-xs) 0;
+.publication-meta {
+  color: var(--muted);
+  font-style: italic;
 }
 
-.education-supervisor {
-  margin: var(--space-xs) 0;
-  font-size: var(--text-sm);
-  color: var(--muted);
+.publication-link,
+.publication-link a {
+  color: var(--primary);
+  font-weight: 700;
 }
 
 /* ===========================================================================
-   10. Collapsibles (details)
+   11. Collapsibles (details)
    =========================================================================== */
 
 .collapsible-block {
@@ -637,65 +730,19 @@ details[open] > .collapsible-summary::after {
 }
 
 /* ===========================================================================
-   11. Publications
-   =========================================================================== */
+    12. Conferences
+    =========================================================================== */
 
-.publications-group {
-  margin-bottom: var(--space-xl);
-}
+    .conferences-group {
+      margin-bottom: var(--space-xl);
+    }
 
-.publications-group:last-child {
-  margin-bottom: 0;
-}
+    .conferences-group:last-child {
+      margin-bottom: 0;
+    }
 
-.publications-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: var(--space-md);
-}
-
-.publication-item {
-  padding: var(--space-md) var(--space-lg);
-  display: grid;
-  gap: var(--space-xs);
-}
-
-.publication-title {
-  font-weight: 700;
-  color: var(--text);
-}
-
-.publication-authors {
-  color: var(--muted);
-}
-
-.publication-meta {
-  color: var(--muted);
-  font-style: italic;
-}
-
-.publication-link,
-.publication-link a {
-  color: var(--primary);
-  font-weight: 700;
-}
-
-/* ===========================================================================
-   12. Conferences
-   =========================================================================== */
-
-.conferences-group {
-  margin-bottom: var(--space-xl);
-}
-
-.conferences-group:last-child {
-  margin-bottom: 0;
-}
-
-/* ===========================================================================
-   13. Profile links
+    /* ===========================================================================
+    13. Profile links
    =========================================================================== */
 
 .profile-links {
@@ -730,7 +777,7 @@ details[open] > .collapsible-summary::after {
 .profile-link:hover {
   transform: translateY(-1px);
   border-color: var(--primary);
-  box-shadow: 0 8px 18px rgb(37 99 235 / 15%);
+  box-shadow: 0 8px 18px var(--primary-glow);
 }
 
 /* ===========================================================================
@@ -746,11 +793,7 @@ footer {
 }
 
 /* ===========================================================================
-   15. Alerts
-   =========================================================================== */
-
-/* ===========================================================================
-   16. Responsive
+   15. Responsive
    =========================================================================== */
 
 @media (width <= 900px) {
@@ -787,7 +830,7 @@ footer {
   }
 
   .nav-toggle-checkbox:checked ~ .nav-links {
-    max-height: 24rem;
+    max-height: 30rem;
     opacity: 1;
     pointer-events: auto;
     padding: var(--space-sm) var(--space-md) var(--space-md);
@@ -805,6 +848,7 @@ footer {
   .nav-links a:hover {
     border-color: transparent;
     border-bottom-color: var(--border);
+    background: var(--surface-alt);
   }
 }
 
@@ -824,7 +868,7 @@ footer {
 }
 
 /* ===========================================================================
-   17. Print
+   16. Print
    =========================================================================== */
 
 @media print {

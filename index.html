@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +9,8 @@
     />
     <meta name="author" content="Daniele Raiola" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f1521" media="(prefers-color-scheme: dark)" />
     <meta property="og:title" content="Daniele Raiola — Philosophy of Science" />
     <meta
       property="og:description"
@@ -17,8 +18,9 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://daniele-raiola.github.io/Portfolio" />
-    <meta property="og:image" content="assets/images/profile-photo.jpg" />
+    <meta property="og:image" content="https://daniele-raiola.github.io/Portfolio/assets/images/profile-photo.jpg" />
     <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://daniele-raiola.github.io/Portfolio/assets/images/profile-photo.jpg" />
     <meta name="twitter:title" content="Daniele Raiola — Philosophy of Science" />
     <meta
       name="twitter:description"
@@ -34,24 +36,52 @@
   "name": "Daniele Raiola",
   "url": "https://daniele-raiola.github.io/Portfolio",
   "email": "daniele.raiola98@gmail.com",
-  "jobTitle": "Philosophy of Science"
+  "jobTitle": "PhD Candidate in Philosophy"
 }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script>
+      // Sync aria-expanded on the nav toggle for screen readers.
+      const navToggle = document.getElementById('nav-toggle-checkbox');
+      navToggle.addEventListener('change', () => {
+        navToggle.setAttribute('aria-expanded', String(navToggle.checked));
+      });
+    </script>
   </head>
   <body>
-    <input type="checkbox" id="theme-toggle-checkbox" class="theme-toggle-checkbox" aria-label="Toggle dark mode">
-
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none;" aria-hidden="true">
+  <symbol id="icon-philpeople" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="7" r="4"/>
+    <path d="M4 21v-2a8 8 0 0 1 16 0v2"/>
+  </symbol>
+  <symbol id="icon-orcid" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="#a6ce39"/>
+    <text x="12" y="16" text-anchor="middle" font-size="11" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#fff">iD</text>
+  </symbol>
+  <symbol id="icon-google-scholar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3L2 8l10 5 10-5-10-5z"/>
+    <path d="M6 12v5c0 1 2 3 6 3s6-2 6-3v-5"/>
+  </symbol>
+  <symbol id="icon-researchgate" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="6" cy="6" r="2"/>
+    <circle cx="18" cy="6" r="2"/>
+    <circle cx="12" cy="12" r="2"/>
+    <circle cx="6" cy="18" r="2"/>
+    <circle cx="18" cy="18" r="2"/>
+  </symbol>
+</svg>
     <a class="skip-link" href="#top">Skip to content</a>
+
+    <input type="checkbox" id="theme-toggle-checkbox" class="theme-toggle-checkbox" aria-label="Toggle dark mode">
 
     <header class="site-header">
       <div class="container nav">
         <a class="brand" href="#top">Daniele Raiola</a>
 
-        <input type="checkbox" id="nav-toggle-checkbox" class="nav-toggle-checkbox" aria-label="Toggle navigation menu" aria-controls="nav-links">
+        <input type="checkbox" id="nav-toggle-checkbox" class="nav-toggle-checkbox" aria-label="Toggle navigation menu" aria-controls="nav-links" aria-expanded="false">
         <label for="nav-toggle-checkbox" class="nav-toggle">
           <span class="nav-toggle-bar"></span>
           <span class="nav-toggle-bar"></span>
@@ -59,7 +89,7 @@
         </label>
 
         <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
-          <a href="#about">Research</a>
+          <a href="#about">About</a>
           <a href="#education">Education</a>
           <a href="#publications">Publications</a>
           <a href="#talks">Talks</a>
@@ -112,10 +142,10 @@
               <a class="btn btn-secondary" href="mailto:daniele.raiola98@gmail.com">daniele.raiola98@gmail.com</a>
             </div>
             <div class="profile-links" id="profile-links" aria-label="Academic profiles">
-              <a class="profile-link" href="https://philpeople.org/" target="_blank" rel="noopener noreferrer" aria-label="PhilPeople"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span>PhilPeople</span></a>
-              <a class="profile-link" href="https://orcid.org/0009-0002-0610-3505" target="_blank" rel="noopener noreferrer" aria-label="ORCID"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span>ORCID</span></a>
-              <a class="profile-link" href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span>Google Scholar</span></a>
-              <a class="profile-link" href="https://www.researchgate.net/" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span>ResearchGate</span></a>
+              <a class="profile-link" href="https://philpeople.org/" target="_blank" rel="noopener noreferrer" aria-label="PhilPeople"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><use href="#icon-philpeople"></use></svg><span>PhilPeople</span></a>
+              <a class="profile-link" href="https://orcid.org/0009-0002-0610-3505" target="_blank" rel="noopener noreferrer" aria-label="ORCID"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><use href="#icon-orcid"></use></svg><span>ORCID</span></a>
+              <a class="profile-link" href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><use href="#icon-google-scholar"></use></svg><span>Google Scholar</span></a>
+              <a class="profile-link" href="https://www.researchgate.net/" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><use href="#icon-researchgate"></use></svg><span>ResearchGate</span></a>
             </div>
           </div>
         </div>
@@ -296,10 +326,10 @@
               <a class="btn btn-primary" href="mailto:daniele.raiola98@gmail.com">daniele.raiola98@gmail.com</a>
             </div>
             <div class="profile-links" id="contact-profiles" aria-label="Academic profiles">
-              <a class="profile-link" href="https://philpeople.org/" target="_blank" rel="noopener noreferrer" aria-label="PhilPeople"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span>PhilPeople</span></a>
-              <a class="profile-link" href="https://orcid.org/0009-0002-0610-3505" target="_blank" rel="noopener noreferrer" aria-label="ORCID"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span>ORCID</span></a>
-              <a class="profile-link" href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span>Google Scholar</span></a>
-              <a class="profile-link" href="https://www.researchgate.net/" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span>ResearchGate</span></a>
+              <a class="profile-link" href="https://philpeople.org/" target="_blank" rel="noopener noreferrer" aria-label="PhilPeople"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><use href="#icon-philpeople"></use></svg><span>PhilPeople</span></a>
+              <a class="profile-link" href="https://orcid.org/0009-0002-0610-3505" target="_blank" rel="noopener noreferrer" aria-label="ORCID"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><use href="#icon-orcid"></use></svg><span>ORCID</span></a>
+              <a class="profile-link" href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><use href="#icon-google-scholar"></use></svg><span>Google Scholar</span></a>
+              <a class="profile-link" href="https://www.researchgate.net/" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate"><svg class="profile-link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><use href="#icon-researchgate"></use></svg><span>ResearchGate</span></a>
             </div>
           </div>
         </div>
