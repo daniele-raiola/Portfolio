@@ -35,7 +35,7 @@
   /* Radius scale */
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
-  --radius-lg: 1.25rem;
+  --radius-lg: 0.75rem;
   --radius-pill: 999px;
 
   /* Typography scale */
@@ -170,6 +170,7 @@ h1,
 h2,
 h3 {
   line-height: 1.2;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 h1 {
@@ -317,6 +318,7 @@ section + section {
   border-radius: var(--radius-pill);
   background: var(--surface);
   color: var(--muted);
+  font: inherit;
   cursor: pointer;
   transition:
     transform 0.2s ease,
@@ -375,6 +377,7 @@ section + section {
   border-radius: var(--radius-pill);
   background: var(--surface);
   color: var(--muted);
+  font: inherit;
   cursor: pointer;
   transition:
     transform 0.2s ease,
@@ -433,6 +436,17 @@ section + section {
   max-width: 720px;
 }
 
+.hero-text p {
+  max-width: 62ch;
+}
+
+.hero .hero-role {
+  margin: calc(var(--space-sm) * -1) 0 var(--space-md);
+  color: var(--text);
+  font-size: var(--text-base);
+  font-weight: 700;
+}
+
 .hero p {
   color: var(--muted);
   font-size: var(--text-lg);
@@ -448,9 +462,11 @@ section + section {
   width: 280px;
   height: 280px;
   margin: 0 auto var(--space-lg);
-  border-radius: 50%;
+  border: 8px solid var(--surface);
+  border-radius: var(--radius-lg);
   object-fit: cover;
   object-position: 30% center;
+  box-shadow: var(--shadow);
 }
 
 .eyebrow {
@@ -532,12 +548,16 @@ section + section {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
 }
 
 .contact-card {
   text-align: center;
   padding: var(--space-2xl);
+}
+
+.contact-card .btn-row,
+.contact-card .profile-links {
+  justify-content: center;
 }
 
 .contact-card h2 {
@@ -578,6 +598,14 @@ section + section {
   font-weight: 700;
 }
 
+.about-text p {
+  margin: 0 0 var(--space-lg);
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
 /* ===========================================================================
    09. Timeline (shared by education, experience, conferences)
    =========================================================================== */
@@ -589,11 +617,10 @@ section + section {
 
 .timeline-item {
   padding: var(--space-md) var(--space-lg);
-  border: 1px solid var(--border);
+  border: 1px solid transparent;
   border-left: 3px solid var(--primary);
   border-radius: var(--radius-md);
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
+  background: var(--surface-alt);
 }
 
 .timeline-item h3 {
@@ -612,6 +639,27 @@ section + section {
 
 .timeline-item [aria-hidden='true'] {
   color: var(--muted);
+}
+
+.event-status {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: var(--space-xs);
+  padding: 0 var(--space-sm);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-pill);
+  color: var(--primary-dark);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@media (width <= 480px) {
+  .event-status {
+    display: table;
+    margin: var(--space-xs) 0 0;
+  }
 }
 
 /* ===========================================================================
@@ -638,6 +686,7 @@ section + section {
   padding: var(--space-md) var(--space-lg);
   display: grid;
   gap: var(--space-xs);
+  border-left: 3px solid var(--primary);
 }
 
 .publication-title {
@@ -753,6 +802,10 @@ details[open] > .collapsible-summary::after {
   margin-top: var(--space-md);
 }
 
+.contact-card .profile-links {
+  margin-top: var(--space-lg);
+}
+
 .profile-link {
   display: inline-flex;
   align-items: center;
@@ -852,6 +905,27 @@ footer {
   }
 }
 
+@media (width >= 769px) {
+  .hero-grid {
+    grid-template-columns: minmax(240px, 0.7fr) minmax(0, 1.3fr);
+    align-items: center;
+    text-align: left;
+  }
+
+  .hero-card {
+    margin: 0;
+  }
+
+  .hero-card img {
+    margin-bottom: 0;
+  }
+
+  .btn-row,
+  .profile-links {
+    justify-content: flex-start;
+  }
+}
+
 @media (width <= 640px) {
   :root {
     --space-4xl: 3rem;
@@ -860,6 +934,20 @@ footer {
 
   .hero {
     padding-top: var(--space-3xl);
+  }
+
+  .hero .btn-row {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero .btn {
+    width: min(100%, 20rem);
+  }
+
+  .hero .profile-links {
+    justify-content: center;
   }
 
   .section-accent {
