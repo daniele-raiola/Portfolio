@@ -6,3 +6,4 @@ dist
 *.pid
 *.seed
 *.pid.lock
+*.md
