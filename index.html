@@ -162,7 +162,7 @@
           <div id="education-list" class="timeline">
             <article class="timeline-item">
               <h3>PhD in Philosophy</h3>
-              <p><strong>Ca&#39; Foscari University of Venice</strong> <span aria-hidden="true">·</span> <time datetime="2025-09">Sep 2025</time> – Present</p>
+              <p><strong>Ca&#39; Foscari University of Venice</strong> <span aria-hidden="true">·</span> <time datetime="2025-09">Sep 2025</time> – <span class="current-label">Present</span></p>
               <p><strong class="thesis-label-phd">Research focus:</strong> Epistemology of Trust: How Trust Shapes Knowledge</p>
             </article>
             <article class="timeline-item">
@@ -187,8 +187,9 @@
           <div id="research-stays-list" class="timeline">
             <article class="timeline-item">
               <h3>Visiting Student</h3>
-              <p><strong>TU Berlin</strong> <span aria-hidden="true">·</span> <time datetime="2026-09-01">Sep 1, 2026</time> – <time datetime="2026-09-25">Sep 25, 2026</time> <span class="event-status">Ongoing</span></p>
+              <p><strong>TU Berlin</strong> <span aria-hidden="true">·</span> <time datetime="2026-09-01">Sep 1, 2026</time> – <time datetime="2026-09-25">Sep 25, 2026</time></p>
               <p>Hosted by Prof. Adrian W&uuml;thrich and the NEPI research team.</p>
+              <p>Funded by TU- Mitteln für Internationale Wissenschaftskooperationen.</p>
               <p><a href="https://www.tu.berlin/hps-mod-sci/ueber-uns/team/daniele-raiola" target="_blank" rel="noopener noreferrer">View my TU Berlin profile</a></p>
             </article>
           </div>
@@ -203,7 +204,7 @@
           <div id="other-experience-list" class="timeline">
             <article class="timeline-item">
               <h3>Volunteer &amp; Full Member</h3>
-              <p><strong>Osservatorio Astronomico G.V. Schiaparelli</strong> <span aria-hidden="true">·</span> <time datetime="2016-07">Jul 2016</time> – Present</p>
+              <p><strong>Osservatorio Astronomico G.V. Schiaparelli</strong> <span aria-hidden="true">·</span> <time datetime="2016-07">Jul 2016</time> – <span class="current-label">Present</span></p>
               <p>Science communication and public outreach. Cultural events planning and delivery. Volunteer training and didactic support. Lecturer in philosophy of science for astronomers and science communicators.</p>
             </article>
             <article class="timeline-item">
@@ -344,39 +345,85 @@
       const languageToggle = document.querySelector('.language-toggle');
       const navLinks = document.getElementById('nav-links');
       const themeColorMeta = document.querySelectorAll('meta[name="theme-color"]');
+      const localizedMeta = {
+        description: document.querySelector('meta[name="description"]'),
+        ogDescription: document.querySelector('meta[property="og:description"]'),
+        ogTitle: document.querySelector('meta[property="og:title"]'),
+        twitterDescription: document.querySelector('meta[name="twitter:description"]'),
+        twitterTitle: document.querySelector('meta[name="twitter:title"]')
+      };
 
       const translations = {
         it: {
           '.skip-link': 'Vai al contenuto',
           '.nav-links a:nth-child(1)': 'Chi sono',
           '.nav-links a:nth-child(2)': 'Formazione',
-          '.nav-links a:nth-child(3)': 'Soggiorni di ricerca all\'estero',
+          '.nav-links a:nth-child(3)': 'Soggiorni di ricerca',
           '.nav-links a:nth-child(4)': 'Pubblicazioni',
           '.nav-links a:nth-child(5)': 'Conferenze',
           '.nav-links a:nth-child(6)': 'CV',
           '.nav-links a:nth-child(7)': 'Contatti',
           '.hero-role': 'Dottorando in Filosofia · Università Ca\' Foscari di Venezia',
           '.hero-focus': 'Ricerca: epistemologia sociale · fiducia epistemica · collaborazione scientifica',
-          '.hero-text > p:not(.hero-role):not(.hero-focus)': 'Studio il modo in cui la fiducia influenza il risultato epistemico delle collettività scientifiche. Il mio lavoro si colloca all\'intersezione tra filosofia della scienza, epistemologia sociale e filosofia della collaborazione scientifica.',
+          '.hero-text > p:not(.hero-role):not(.hero-focus)': 'Studio il modo in cui la fiducia contribuisce a determinare gli esiti epistemici dei collettivi scientifici. La mia ricerca si colloca all\'intersezione tra filosofia della scienza, epistemologia sociale e filosofia della collaborazione scientifica.',
           '.hero .btn-primary': 'Scarica il CV',
+          '.hero-card img': 'Foto di Daniele Raiola',
           '#about h2': 'Chi sono',
-          '#about-content p:nth-child(1)': 'Mi occupo di filosofia della scienza, con particolare attenzione all\'<strong>epistemologia sociale</strong>, alla <strong>fiducia epistemica</strong> e alle condizioni che rendono possibile la <strong>conoscenza scientifica collettiva</strong>. La mia ricerca analizza come fiducia, collaborazione e strutture istituzionali plasmino il risultato epistemico dei progetti di ricerca su larga scala.',
-          '#about-content p:nth-child(2)': 'Il mio progetto di dottorato, <strong>Epistemology of Trust: How Trust Shapes Knowledge</strong>, studia il contributo della fiducia alla formazione di conoscenza affidabile nelle collettività scientifiche, con particolare attenzione a progetti come <strong>(ng)EHT</strong> e <strong>LIGO</strong>. Mi occupo inoltre di comunicazione e divulgazione scientifica attraverso il volontariato presso l\' <a href="https://www.astrogeo.va.it/" target="_blank" rel="noopener noreferrer"><strong>Osservatorio Astronomico G.V. Schiaparelli</strong></a>.',
+          '#about-content p:nth-child(1)': 'Mi occupo di filosofia della scienza, con particolare attenzione all\'<strong>epistemologia sociale</strong>, alla <strong>fiducia epistemica</strong> e alle condizioni che rendono possibile la <strong>conoscenza scientifica collettiva</strong>. La mia ricerca esamina come fiducia, collaborazione e strutture istituzionali plasmino gli esiti epistemici dei grandi progetti di ricerca.',
+          '#about-content p:nth-child(2)': 'Il mio progetto di dottorato, <strong>Epistemology of Trust: How Trust Shapes Knowledge</strong>, esamina il contributo della fiducia alla formazione di conoscenza affidabile nei collettivi scientifici, con particolare attenzione a progetti come <strong>(ng)EHT</strong> e <strong>LIGO</strong>. Mi occupo inoltre di comunicazione e divulgazione scientifica attraverso il volontariato presso l\'<a href="https://www.astrogeo.va.it/" target="_blank" rel="noopener noreferrer"><strong>Osservatorio Astronomico G.V. Schiaparelli</strong></a>.',
           '#education h2': 'Formazione',
+          '#education-list article:nth-child(1) h3': 'Dottorato di ricerca in Filosofia',
+          '#education-list article:nth-child(1) p:nth-of-type(1) strong': 'Università Ca\' Foscari Venezia',
+          '#education-list article:nth-child(1) time': 'settembre 2025',
+          '#education-list article:nth-child(1) .current-label': 'in corso',
+          '#education-list article:nth-child(2) h3': 'Laurea magistrale in Scienze filosofiche',
+          '#education-list article:nth-child(2) p:nth-of-type(1) strong': 'Università degli Studi di Milano',
+          '#education-list article:nth-child(3) h3': 'Laurea triennale in Filosofia',
+          '#education-list article:nth-child(3) p:nth-of-type(1) strong': 'Università degli Studi di Milano',
           '.thesis-label-phd': 'Tema di ricerca:',
           '.thesis-label-ma': 'Tesi magistrale:',
           '.thesis-label-ba': 'Tesi triennale:',
-          '#research-stays h2': 'Soggiorni di ricerca all\'estero',
+          '#research-stays h2': 'Soggiorni di ricerca',
+          '#research-stays article h3': 'Studente in visita',
+          '#research-stays article time:nth-of-type(1)': '1 settembre 2026',
+          '#research-stays article time:nth-of-type(2)': '25 settembre 2026',
           '#research-stays article p:nth-of-type(2)': 'Ospitato dal prof. Adrian W&uuml;thrich e dal gruppo di ricerca NEPI.',
+          '#research-stays article p:nth-of-type(3)': 'Finanziato con fondi della TU per la cooperazione scientifica internazionale.',
           '#research-stays article a': 'Visualizza il mio profilo TU Berlin',
           '#other-experience h2': 'Altre esperienze professionali',
+          '#other-experience article:nth-child(1) h3': 'Volontario e socio effettivo',
+          '#other-experience article:nth-child(1) time': 'luglio 2016',
+          '#other-experience article:nth-child(1) .current-label': 'in corso',
+          '#other-experience article:nth-child(1) p:nth-of-type(2)': 'Comunicazione e divulgazione scientifica. Pianificazione e realizzazione di eventi culturali. Formazione dei volontari e supporto didattico. Docente di filosofia della scienza per astronomi e comunicatori scientifici.',
+          '#other-experience article:nth-child(2) h3': 'Risorse umane e selezione del personale',
+          '#other-experience article:nth-child(2) time:nth-of-type(1)': 'aprile 2023',
+          '#other-experience article:nth-child(2) time:nth-of-type(2)': 'luglio 2023',
+          '#other-experience article:nth-child(2) p:nth-of-type(2)': 'Coordinamento del team e selezione del personale. Valutazione dei CV e colloqui online.',
           '#publications h2': 'Pubblicazioni e risultati della ricerca',
           '#publications h3': 'Ricerca in corso',
           '.publication-meta': 'Progetto di dottorato in corso',
           '#talks > .container > .section-heading h2': 'Conferenze e presentazioni',
-          '#talks .conferences-group:nth-of-type(1) > h3': 'Divulgazione pubblica',
-          '#talks .conferences-group:nth-of-type(2) > h3': 'Presentazioni scientifiche',
-          '#talks .conferences-group:nth-of-type(3) > h3': 'Partecipazione e interessi',
+          '#talks .conferences-group:nth-of-type(2) > h3': 'Divulgazione scientifica',
+          '#talks .conferences-group:nth-of-type(3) > h3': 'Presentazioni scientifiche',
+          '#talks .conferences-group:nth-of-type(4) > h3': 'Partecipazione e interessi',
+          '#conferences-public article:nth-child(1) h3': 'Docente di filosofia del tempo',
+          '#conferences-public article:nth-child(1) time': '20 novembre 2026, Salone Estense Varese',
+          '#conferences-public article:nth-child(1) .event-status': 'Prossimo evento',
+          '#conferences-public article:nth-child(2) h3, #conferences-public article:nth-child(3) h3': 'Docente di filosofia della scienza',
+          '#conferences-public article:nth-child(2) time': '19 aprile 2026, Osservatorio Astronomico G.V. Schiaparelli',
+          '#conferences-public article:nth-child(3) time': '9 novembre 2025, Osservatorio Astronomico G.V. Schiaparelli',
+          '#conferences-scientific article:nth-child(1) h3': 'Colloquio',
+          '#conferences-scientific article:nth-child(1) time': '23 settembre 2026, TU Berlin, FH 419, Fraunhoferstraße 33-36',
+          '#conferences-scientific article:nth-child(2) h3': 'Presentazione della tesi magistrale',
+          '#conferences-scientific article:nth-child(2) time': '26 novembre 2025',
+          '#conferences-attendance article:nth-child(1) h3': 'Inaugurazione di IMoS',
+          '#conferences-attendance article:nth-child(1) time': '10 settembre 2026',
+          '#conferences-attendance article:nth-child(2) h3': 'Workshop ngEHT',
+          '#conferences-attendance article:nth-child(2) time': '19 maggio 2026',
+          '#conferences-attendance article:nth-child(3) h3': 'Progetto COSMOS',
+          '#conferences-attendance article:nth-child(3) time': '3–4 marzo 2026',
+          '#conferences-attendance article:nth-child(4) h3': 'Workshop SISFA',
+          '#conferences-attendance article:nth-child(4) time': '9–11 dicembre 2025',
           '#conferences-attendance article:nth-child(1) a, #conferences-attendance article:nth-child(2) a, #conferences-attendance article:nth-child(3) a, #conferences-attendance article:nth-child(4) a': 'Pagina ufficiale dell\'evento',
           '#cv .section-kicker': 'Profilo di ricerca',
           '#cv h2': 'CV',
@@ -384,7 +431,7 @@
           '#cv .btn-primary': 'Scarica il CV',
           '#contact .section-kicker': 'Collaborazioni e divulgazione',
           '#contact h2': 'Contatti',
-          '#contact .contact-card > p:nth-of-type(2)': 'Sono disponibile per collaborazioni, conferenze e progetti di ricerca.',
+          '#contact .contact-card > p:nth-of-type(2)': 'Sono disponibile per collaborazioni, occasioni per intervenire come relatore e progetti di ricerca.',
           'footer p': '<span class="footer-name">Daniele Raiola</span> · Filosofia della scienza · Fiducia epistemica'
         }
       };
@@ -404,10 +451,31 @@
           });
         });
         document.title = isItalian ? 'Daniele Raiola — Filosofia della scienza' : 'Daniele Raiola — Philosophy of Science';
+        localizedMeta.description.content = isItalian
+          ? 'Portfolio accademico di Daniele Raiola — Filosofia della scienza, epistemologia e collaborazione scientifica.'
+          : 'Academic portfolio of Daniele Raiola — Philosophy of Science, epistemology, and scientific collaboration.';
+        localizedMeta.ogDescription.content = isItalian
+          ? 'Sono dottorando in Filosofia all’Università Ca’ Foscari Venezia, con una specializzazione in filosofia della scienza ed epistemologia. Mi occupo del ruolo della fiducia epistemica nel plasmare gli esiti epistemici dei collettivi di ricerca.'
+          : 'I\'m a PhD student in Philosophy at Ca\' Foscari University in Venice with a specialization in philosophy of science and epistemology, focusing on the role of epistemic trust in shaping the epistemic output of research collectives.';
+        localizedMeta.twitterDescription.content = localizedMeta.ogDescription.content;
+        localizedMeta.ogTitle.content = document.title;
+        localizedMeta.twitterTitle.content = document.title;
+        document.querySelector('.hero-card').setAttribute('aria-label', isItalian ? 'Profilo' : 'Quick profile');
+        navLinks.setAttribute('aria-label', isItalian ? 'Navigazione principale' : 'Primary navigation');
+        document.querySelectorAll('#nav-toggle-checkbox, .nav-toggle').forEach((element) => {
+          element.setAttribute('aria-label', isItalian ? 'Apri o chiudi il menu di navigazione' : 'Toggle navigation menu');
+        });
+        document.querySelectorAll('#profile-links, #contact-profiles').forEach((element) => {
+          element.setAttribute('aria-label', isItalian ? 'Profili accademici' : 'Academic profiles');
+        });
+        document.querySelectorAll('.profile-link[aria-label="ORCID"]').forEach((element) => {
+          element.setAttribute('aria-label', isItalian ? 'Profilo ORCID' : 'ORCID');
+        });
         languageToggle.textContent = isItalian ? 'EN' : 'IT';
         languageToggle.setAttribute('title', isItalian ? 'Switch to English' : 'Passa all\'italiano');
         languageToggle.setAttribute('aria-label', isItalian ? 'Switch to English' : 'Passa all\'italiano');
         languageToggle.setAttribute('aria-pressed', String(isItalian));
+        syncTheme();
       };
 
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -428,8 +496,11 @@
 
       const syncTheme = () => {
         const isDark = themeCheckbox.checked;
+        const isItalian = document.documentElement.lang === 'it';
         themeToggle.setAttribute('aria-pressed', String(isDark));
-        themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        themeToggle.setAttribute('aria-label', isDark
+          ? (isItalian ? 'Attiva la modalità chiara' : 'Switch to light mode')
+          : (isItalian ? 'Attiva la modalità scura' : 'Switch to dark mode'));
         themeColorMeta.forEach((meta) => {
           meta.setAttribute('content', isDark ? '#0f1521' : '#ffffff');
         });
