@@ -613,18 +613,6 @@ section + section {
   letter-spacing: -0.02em;
 }
 
-.publication-item,
-.timeline-item,
-.education-collapsible {
-  transition: transform 0.2s ease;
-}
-
-.publication-item:hover,
-.timeline-item:hover,
-.education-collapsible:hover {
-  transform: translateX(2px);
-}
-
 .section-heading {
   margin-bottom: var(--space-xl);
 }
