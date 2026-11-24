@@ -627,6 +627,43 @@ section + section {
   color: var(--muted);
 }
 
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+.certification-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  min-width: 0;
+  padding: var(--space-lg);
+  border-left: 3px solid var(--primary);
+  background: var(--surface-alt);
+}
+
+.certification-card img {
+  flex: 0 0 9rem;
+  width: 9rem;
+  height: auto;
+  padding: var(--space-xs);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: #fff;
+  object-fit: contain;
+}
+
+.certification-card h3 {
+  margin: 0 0 var(--space-xs);
+  color: var(--text);
+}
+
+.certification-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
 .about-text {
   max-width: 70rem;
   color: var(--muted);
@@ -1010,6 +1047,15 @@ footer {
   :root {
     --space-4xl: 3rem;
     --space-3xl: 2.25rem;
+  }
+
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certification-card img {
+    flex-basis: 8rem;
+    width: 8rem;
   }
 
   .hero {

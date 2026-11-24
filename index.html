@@ -109,6 +109,7 @@
         <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
           <a href="#about">About</a>
           <a href="#education">Education</a>
+          <a href="#certifications">Certifications</a>
           <a href="#research-stays">Research Stays</a>
           <a href="#publications">Publications</a>
           <a href="#talks">Talks</a>
@@ -219,6 +220,27 @@
               <h3>Bachelor’s Degree in Philosophy</h3>
               <p><strong>University of Milan</strong> <span aria-hidden="true">·</span> <time datetime="2018">2018</time> – <time datetime="2023">2023</time></p>
               <p><strong class="thesis-label-ba">Bachelor's thesis:</strong> Epistemology of Ernst Mach and its convergences with pragmatism</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="certifications">
+        <div class="container">
+          <div class="section-heading">
+            <h2 class="section-accent">Certifications &amp; language</h2>
+            <p>Courses and language proficiency</p>
+          </div>
+          <div class="certifications-grid">
+            <article class="certification-card">
+              <img src="assets/images/assertion-4Vqz3N2fSd6n3JlX29Khzg.png" alt="University of Milan Open Science: Basic Principles badge, 2022" width="400" height="400" loading="lazy" decoding="async" />
+              <h3>Open Science: Basic Principles</h3>
+              <p>University of Milan · 2022</p>
+            </article>
+            <article class="certification-card">
+              <img src="assets/images/assertion-oyrlitZ4R92lGQkQZ5LSVQ.png" alt="Ca' Foscari University of Venice English B2 badge" width="400" height="400" loading="lazy" decoding="async" />
+              <h3>English B2</h3>
+              <p>Ca' Foscari University of Venice</p>
             </article>
           </div>
         </div>
@@ -428,10 +450,11 @@
           '.skip-link': 'Vai al contenuto',
           '.nav-links a:nth-child(1)': 'Chi sono',
           '.nav-links a:nth-child(2)': 'Formazione',
-          '.nav-links a:nth-child(3)': 'Soggiorni di ricerca',
-          '.nav-links a:nth-child(4)': 'Pubblicazioni',
-          '.nav-links a:nth-child(5)': 'Conferenze',
-          '.nav-links a:nth-child(6)': 'Contatti',
+          '.nav-links a:nth-child(3)': 'Certificazioni',
+          '.nav-links a:nth-child(4)': 'Soggiorni di ricerca',
+          '.nav-links a:nth-child(5)': 'Pubblicazioni',
+          '.nav-links a:nth-child(6)': 'Conferenze',
+          '.nav-links a:nth-child(7)': 'Contatti',
           '.hero-role': 'Dottorando in Filosofia · Università Ca\' Foscari di Venezia',
           '.hero-membership': '<a href="https://www.ngeht.org/hpc" target="_blank" rel="noopener noreferrer">Membro dell\'HPC di ngEHT · Collaboration Working Group</a>',
           '.hero-focus': 'Ricerca: epistemologia sociale · fiducia epistemica · collaborazione scientifica',
@@ -458,6 +481,11 @@
           '.thesis-label-phd': 'Tema di ricerca:',
           '.thesis-label-ma': 'Tesi magistrale:',
           '.thesis-label-ba': 'Tesi triennale:',
+          '#certifications h2': 'Certificazioni e competenze linguistiche',
+          '#certifications .section-heading p': 'Corsi e competenze linguistiche',
+          '#certifications .certification-card:nth-child(1) h3': 'Open Science: principi di base',
+          '#certifications .certification-card:nth-child(1) p': 'Università degli Studi di Milano · 2022',
+          '#certifications .certification-card:nth-child(2) p': 'Università Ca’ Foscari Venezia',
           '#research-stays h2': 'Soggiorni di ricerca',
           '#research-stays article h3': 'Studente in visita',
           '#research-stays article time:nth-of-type(1)': '1 settembre 2026',
@@ -541,6 +569,12 @@
         document.querySelectorAll('.research-stay-content').forEach((element) => {
           element.lang = isItalian ? 'it' : 'en';
         });
+        document.querySelector('#certifications .certification-card:nth-child(1) img').alt = isItalian
+          ? 'Attestato dell’Università degli Studi di Milano in Open Science: principi di base, 2022'
+          : 'University of Milan Open Science: Basic Principles badge, 2022';
+        document.querySelector('#certifications .certification-card:nth-child(2) img').alt = isItalian
+          ? 'Attestato di inglese B2 dell’Università Ca’ Foscari Venezia'
+          : 'Ca’ Foscari University of Venice English B2 badge';
         document.title = isItalian ? 'Daniele Raiola — Filosofia della scienza' : 'Daniele Raiola — Philosophy of Science';
         localizedMeta.description.content = isItalian
           ? 'Portfolio accademico di Daniele Raiola — Filosofia della scienza, epistemologia e collaborazione scientifica.'
